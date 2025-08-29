@@ -10,6 +10,12 @@ pipeline {
                 sh 'docker --version'
             }
         }
+        stage('Print PATH') {
+            steps {
+                sh 'echo $PATH'
+                sh 'which docker'
+            }
+        }
         stage('Checkout') {
             steps {
                 checkout scm
@@ -27,5 +33,3 @@ pipeline {
         }
     }
 }
-
-// test change
